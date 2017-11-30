@@ -9,7 +9,7 @@ class PostDate
 	
 	public void setDate(String file)
 	{
-		this.date=file + " 2017";
+		this.date=file + " 2017";// added year to get current calender
 	}
 
 	
@@ -53,11 +53,17 @@ class PostTime
 		{
 			this.post_time = file;
 		}
+		
+		
 
-		//time to flaot
+		
 		
 		public String getTime()
 		{
+			SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm");
+			Date time = timeFormat.parse(post_time);
+			
+			
 				return post_time;
 		}
 }
